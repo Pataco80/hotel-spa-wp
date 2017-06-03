@@ -40,11 +40,11 @@
             <!-- Banière vidéo --> 
             <div class="promo-video">
               <div id="overlay"></div>
-              <video id="promo-element" autoplay loop>
-                <source src="assets/videos/videobg.mp4">
-                <source src="assets/videos/videobg.webm">
-                <source src="assets/videos/videobg.ogv">
-              </video>
+              <?php 
+                while(have_posts()): the_post();
+                  the_content();
+                endwhile;
+              ?>
             </div>
 
             <!-- Logo et button hamburger -->
@@ -52,7 +52,7 @@
               <div class="row align-justify align-middle">
               <!-- Logo --> 
                 <div class="medium-4 columns">
-                  <img src="assets/images/logo.svg" alt="logo">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="logo">
                 </div><!-- /Logo -->
 
                 <!-- Menu icon hamburger -->
