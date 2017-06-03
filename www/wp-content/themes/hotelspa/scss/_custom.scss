@@ -1,0 +1,679 @@
+/* ------------------- Règles générales ---------------------- */
+.bg-blue {
+  background-color: $primary-color;
+}
+/* ------------------- Flex-grid ------------------- */
+
+@include breakpoint(medium) {
+  .medium-align-self-top {
+    align-self: flex-start;
+  }
+}
+/* ------------------- /Flex-grid ------------------- */
+
+/* ------------------- Text-class ------------------- */
+h2 {
+  color: $primary-color;
+  font-size: rem-calc(42);
+  font-weight: bold;
+  &.show-for-small-only {
+    margin-bottom: rem-calc(30);
+  }
+}
+
+.text-white {
+  color: $white;
+}
+/* ------------------- /Text-class ------------------- */
+
+/* ------------------- Boutons ---------------------- */
+.button {
+  @include button-style($secondary-color, darken($secondary-color,15), $white);
+  font-weight: bold;
+  font-size: rem-calc(16);
+  text-transform: uppercase;
+}
+
+.button[type="reset"], .button.close-button-gallery {
+  @include button-hollow;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+}
+.button.round {
+  border-radius: 1000px;
+}
+
+/* ------------------- Boutons ---------------------- */
+
+/* ------------------- separator-image ---------------------- */
+/* ------------------- separator-image General ---------------------- */
+.separator-image {
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  @include breakpoint(medium){
+    height: 350px;
+  }
+}/* ------------------- /separator-image General ---------------------- */
+
+/* ------------------- separator-image pool-image ---------------------- */
+.pool-image {
+  background-image: url(../assets/images/separators/small/separator01-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator01-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator01-image.jpg);
+  }
+}/* ------------------- /separator-image pool-image ---------------------- */
+
+/* ------------------- separator-image bar-image ---------------------- */
+.bar-image {
+  background-image: url(../assets/images/separators/small/separator02-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator02-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator02-image.jpg);
+  }
+}/* ------------------- /separator-image bar-image ---------------------- */
+
+/* ------------------- separator-image room-image ---------------------- */
+.rooms-image {
+  background-image: url(../assets/images/separators/small/separator03-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator03-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator03-image.jpg);
+  }
+}/* ------------------- /separator-image room-image ---------------------- */
+
+/* ------------------- separator-image room01-image ---------------------- */
+.room01-image {
+  background-image: url(../assets/images/separators/small/separator-room01-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator-room01-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator-room01-image.jpg);
+  }
+}/* ------------------- /separator-image room-image ---------------------- */
+
+/* ------------------- /separator-image ---------------------- */
+
+/* ------------------- Modal ---------------------- */
+/* ------------------- Modal general ---------------------- */
+
+.reveal {
+  display: flex;
+  box-sizing: border-box;
+  height: auto;
+  min-height: auto !important;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  width: 88%;
+  margin: 0 auto;
+  overflow: visible;
+  button[data-close] {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    align-self: flex-end;
+    position: absolute;
+    right: -0.75rem;
+    top: -0.75rem;
+    opacity: 0.3;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+      width: 2rem;
+      height: 2rem;
+      right: -1rem;
+      top: -1rem;
+      
+    }
+  }
+}/* ------------------- Modal general ---------------------- */
+
+/* ------------------- Modal gallery ---------------------- */
+.modal-gallery {
+  justify-content: center;
+  position: relative;
+  padding: rem-calc(5);
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+}/* ------------------- /Modal gallery ---------------------- */
+/* ------------------- /Modal ---------------------- */
+
+
+/* ------------------- Gallery ---------------------- */
+.gallery {
+  background-color: $primary-color;
+  padding: rem-calc(30 15);
+  @include breakpoint(medium){
+    padding: rem-calc(0 20);
+  }
+  h2 {
+    color: $white;
+    padding-left: rem-calc(15);
+  }
+  .thumbnail {
+    max-width: none;
+    width: 100%;
+    height: auto;
+    margin: rem-calc(20 0 20 0);
+  }
+}/* ------------------- /Gallery ---------------------- */
+
+
+/* ------------------- forms ---------------------- */
+.is-invalid-input {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-error {
+  display: none;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+  font-style: italic;
+  font-weight:normal;
+  color: #fff;
+  background-color: #f00;
+  padding: .1rem .3rem;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: all 0.5s ease-out;
+}
+/* ------------------- /forms ---------------------- */
+
+/* ------------------- /Règles générales ---------------------- */
+
+
+/*  ------------------ Off-canvas ------------------  */
+.off-canvas {
+  
+  h3 {
+    font-size: rem-calc(20);
+    color: $white;
+  }
+  .menu li {
+    height:  rem-calc(35);
+    a {
+      color: $white;
+      outline:none;
+      height: 100%;
+      padding: 0 1rem;
+      align-items: center;
+      /* Transition "ease-in-out" de 0.5s sur font-size */
+      transition: font-size 0.5s ease-in-out;
+      &:hover {
+		    color: $secondary-color;
+        transform: translateX(0.5rem);
+        font-size: rem-calc(20);
+      }
+      &::after {
+        border-color: transparent transparent transparent $white;
+        transition-property: all;
+        transition-duration: 0.5;
+        transition-timing-function: ease-in-out;
+      }
+      &::before{
+        transition-property: all;
+        transition-duration: 0.5;
+        transition-timing-function: ease-in-out;
+      }
+      &:hover::before {
+        border-color: transparent $secondary-color transparent transparent;
+      }
+      &:hover::after  {
+        right: 1.5rem;
+        border-color: transparent transparent transparent $secondary-color;
+      }
+      &.active {
+        background-color: $secondary-color;
+        color: $white;
+        transform: none;
+        font-size: rem-calc(15);
+      }
+    }
+  }
+  
+  li.is-submenu-parent-item {
+    height: auto;
+    text-align: center;
+    background-color: $secondary-color;
+    font-size: rem-calc(20);
+    font-style: italic;
+    a{
+      justify-content: center;
+      &:hover{
+        color: $white !important;
+        transform: none;
+      }
+    }
+  }
+  li.js-drilldown-back a{
+    justify-content: center;
+    &:hover{
+      transform: none;
+    }
+  }  
+}
+/*  ------------------ /Off-canvas ------------------ */
+
+
+/* ------------------- Header ---------------------- */
+
+/* ------------------- Banière video ---------------------- */
+header{
+  position: relative;
+}
+.promo-video, .promo {
+  position: relative;
+  width: 100%;
+  video {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+  }
+  #overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
+    background: -o-linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
+    background: linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3004a8d', endColorstr='#b301163b',GradientType=0 );
+  }
+}/* ------------------- /Banière video ---------------------- */
+
+/* ------------------- logo et menu ---------------------- */
+.header-content {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .menu-icon, .menu-icon:hover {
+    z-index: 50;
+    width: rem-calc(40);
+    height: rem-calc(24);
+    margin-right: rem-calc(15);
+    @include breakpoint(medium) {
+      width: rem-calc(60);
+      height: rem-calc(32);
+      margin-right: rem-calc(20);
+    }
+    &::after{
+      height: rem-calc(4);
+      background-color: $white;
+      box-shadow: 0 20px 0 $white, 0 10px 0 $white;
+      @include breakpoint(medium) {
+        height: rem-calc(6);
+        box-shadow: 0 32px 0 $white, 0 16px 0 $white;
+      }
+    }
+  }
+}/* ------------------- /logo et menu ---------------------- */
+
+/* ------------------- Slogan ---------------------- */
+.headliner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 90%;
+  height: 100%;
+  .small-10{
+    margin: 0 auto;
+  }
+  h1{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    width:100%;
+    color: $white;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    border-top: 2px solid $white;
+    border-bottom: 2px solid $white;
+    text-transform: uppercase;
+    font-size: rem-calc(20);
+    @include breakpoint(medium) {
+      font-size: rem-calc(48);
+    }
+  }
+}/* ------------------- Slogan ---------------------- */
+
+/* ------------------- /Header ---------------------- */
+
+
+/* ------------------- Footer ---------------------- */
+footer {
+  padding-top: rem-calc(30);
+  background-color: $primary-color;
+  color: $white;
+  /* ------------------- Footer Links ---------------------- */
+  a {
+    padding-left: 0;
+    color: $white;
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+  .sitemap .menu>li {
+    height: rem-calc(40);
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    @include breakpoint(large) {
+      flex: 1 1 0px;
+      justify-content: center;
+    }
+    a{
+      padding: 0;
+      width: 100%;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      @include breakpoint(large) {
+        justify-content: center;
+      }
+      &:hover, &.active {
+        color: $secondary-color;
+        font-size: rem-calc(20);
+        @include breakpoint(large) {
+          font-size: rem-calc(18);
+        }
+      }
+    }
+  }
+
+  /* ------------------- /Footer Links ---------------------- */
+  
+  /* ------------------- contact-information ---------------------- */
+  .contact-information {
+    position: relative;
+
+    h4{
+      margin-left: rem-calc(38);
+      @include breakpoint(medium) {
+        margin-left: rem-calc(60);
+      }
+    }
+    li {
+      position: relative;
+      padding-top: rem-calc(10);
+      padding-left: rem-calc(38);
+      height: rem-calc(45);
+      @include breakpoint(medium) {
+        padding-top: rem-calc(20);
+        padding-left: rem-calc(60);
+      }
+      i {
+        position: absolute;
+        font-size: rem-calc(40);
+        top: -5px; left: 0;
+        @include breakpoint(medium) {
+          font-size: rem-calc(50);
+          top: -5px; left: 0;
+        }
+      }
+    }
+    .map li:first-child{
+      padding-top: rem-calc(3);
+      height: auto;
+      i{
+        top: rem-calc(0);
+        @include breakpoint(medium) {
+          top: rem-calc(-12);
+        }
+      }
+    }
+    .map li:last-child{
+      padding-top: 0;
+      height: auto;
+    }
+  }/* ------------------- /contact-information ---------------------- */
+  
+  /* ------------------- Footer About ---------------------- */  
+  .footer-about {
+    padding-top: rem-calc(30);
+    text-align: center;
+    @include breakpoint(medium){
+      padding-top: 0;
+      text-align: left;
+    }
+    /* ------------------- Social icon ---------------------- */
+    .social{
+      font-size: rem-calc(50);
+      justify-content: center;
+      a, a:hover {
+        color: $white;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        justify-content: center;
+        
+      }
+      i {
+        margin: 0;
+        display: flex ;
+        align-self: center;
+        &:hover {
+          font-size: rem-calc(60);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      @include breakpoint(medium) {
+        justify-content: flex-end
+      }
+    }
+  }/* ------------------- /Social icon ---------------------- */
+  
+  /* ------------------- Copyright ---------------------- */ 
+  p.copyright {
+    margin-top: rem-calc(10);
+    margin-bottom: 0;    padding: rem-calc(20 0);
+    background-color: darken($primary-color, 15);
+  }/* ------------------- /Copyright ---------------------- */ 
+  
+}/* ------------------- /Footer ---------------------- */
+
+
+
+/* ----------------------------- Pages -------------------------------- */
+
+/* ----------------------------- index.html and rooms.html (using rooms section in index and rooms page) -------------------------------- */
+
+/* -------------------- Rooms Section --------------------*/
+.rooms {
+  padding: rem-calc(30 15);
+  width: 100%;
+  @include breakpoint(large) {
+    padding: rem-calc(30);
+  }
+  .button{
+    margin: rem-calc(15 15 0 0);
+  }
+  h2{
+    width: 100%;
+    padding-left: rem-calc(15);
+  }
+  /* ------------------- Rooms container ---------------------- */
+  .rooms-container {
+    margin: 0;
+    width: 100%;
+    @include breakpoint(medium){
+      padding: 0;
+    }
+    
+    /* ------------------- Room article ---------------------- */
+    .room-container {
+      margin-bottom: rem-calc(20);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include breakpoint(large){
+        margin-bottom: rem-calc(0);
+      }
+      a {
+        color: $black;
+      }
+      /* ------------------- Room figure ---------------------- */
+      .room-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px 15px 0 15px;
+        background-color: $white;
+        /* ------------------- Room photo ---------------------- */
+        img {
+          width: 100%;
+        }
+        /* ------------------- Room name ---------------------- */
+        .room-title {
+          color: $white;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding-left: rem-calc(20);
+        }
+      }/* ------------------- /Room figure ---------------------- */
+      
+      /* ------------------- Room content ---------------------- */
+      .room-content {
+        padding: rem-calc(20);
+        background-color: $white;
+      }/* ------------------- /Room content ---------------------- */
+    }/* ------------------- /Room article ---------------------- */
+  }/* ------------------- /Rooms container ---------------------- */
+}/* ------------------- /Room Section ---------------------- */
+
+/* ------------------- About Us and Gallery Section ---------------------- */
+.about-us-gallery {
+  position: relative;
+  @include breakpoint(medium){
+      padding: rem-calc(30 0);
+  }
+  /* ------------------- About Us Section ---------------------- */
+  .about-us{
+    padding: rem-calc(25);
+    @include breakpoint(medium){
+      padding: rem-calc(0 30);
+      width: 50%;
+    }
+  }/* ------------------- /About Us Section ---------------------- */
+  
+  
+  /* ------------------- gallery Section ---------------------- */
+  /* ------------------- Background Gallery ---------------------- */
+  .bg-blue {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    @include breakpoint(medium){
+      background-color: $primary-color;
+    }
+  }/* ------------------- /Background Gallery ---------------------- */
+  /* ------------------- Gallery ---------------------- */
+  .gallery {
+    @include breakpoint(medium){
+      width: 50%;
+    }
+  }
+  .button.close-button-gallery {
+  }
+  
+  /* ------------------- /gallery ---------------------- */
+}/* ------------------- /About Us and Gallery Section ---------------------- */
+
+  
+/* ------------------- Book Now Section ---------------------- */
+.book-now {
+  padding: rem-calc(50 30);
+}/* ------------------- /Book Now Section ---------------------- */
+
+/* ----------------------------- /index.html -------------------------------- */
+
+
+
+/* ------------------- About Us.html ---------------------- */
+.photo img { 
+  width: 100%;
+}
+/* ------------------- /About Us.html ---------------------- */
+
+
+
+/* ------------------- services.html ---------------------- */
+.content-page {
+  .content-text, .photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+  }
+  .content-text {
+    overflow: visible;
+  }
+  .photo {
+    overflow: hidden;
+  }
+}
+/* ------------------- /services.html ---------------------- */
+
+
+
+/* ------------------- Room Template ---------------------- */
+.content-page {
+  padding: rem-calc(30 15);
+  &.expanded {
+    padding: rem-calc(30 0 0 0);
+    .room-menu li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      align-items:stretch;
+      a{
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        align-items: center;
+        &:hover, &:active {
+          font-size: rem-calc(20);
+          color: $secondary-color;
+        }
+      }
+    }
+    section:not(#head-room) {
+      padding: rem-calc(15);
+    }
+  }
+  h2 {
+    padding: rem-calc(0 25);
+  }
+}
+/* ------------------- /Room Template ---------------------- */
+
+/* ----------------------------- /Pages -------------------------------- */
