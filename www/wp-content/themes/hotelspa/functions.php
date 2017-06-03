@@ -14,7 +14,12 @@ function hotelspa_styles() {
   wp_enqueue_script('what-input', get_template_directory_uri() . '/js/what-input.min.js', array('jquery'), '6.3.1', true);
   // Foundation site foundation.min.js
   wp_enqueue_script('foundation', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), '6.3.1', true);
+  wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'), '6.3.1', true);
+
+
 }
 
 add_action('wp_enqueue_scripts', 'hotelspa_styles');
+
+add_theme_support('post-thumbnails');
 ?>
